@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { TodosFacadeService } from './../../services/todos-facade.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Todo } from 'src/app/core/model/todo.interface';
+import { Subscription, Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Store, select } from '@ngrx/store';
+import { filter, switchMap } from 'rxjs/operators';
+import { getTodoById, getCurrentNavigatedTodo } from 'src/app/redux/todos';
 
 @Component({
-  selector: 'app-todo-remove',
-  templateUrl: './todo-remove.component.html',
-  styleUrls: ['./todo-remove.component.scss']
+  selector: 'app-todo-edit',
+  templateUrl: './todo-edit.component.html',
+  styleUrls: ['./todo-edit.component.scss']
 })
-export class TodoRemoveComponent implements OnInit {
-  todosFacadeService: any;
+export class TodoEditComponent {
+  get todo(): Observable<Todo>{
+    return this.store.pipe(select(getCurrentNavigatedTodo));
+  }
 
-  constructor() { }
-
+  constructor(private todosFacadeService: TodosFacadeService, private store: Store) {
+  }
   ngOnInit(): void {
   }
   undo() {
@@ -18,6 +26,6 @@ export class TodoRemoveComponent implements OnInit {
   }
 
   removeTodo(todo: Todo) {
-    this.todosFacadeService.removeTodo(todo);
+    this.todosFacadeService.removeTodo(todo.id);
   }
 }
