@@ -31,6 +31,7 @@ export class TodosFacadeService {
 
   removeTodo(todo: Todo){
     this.store.dispatch(removeTodo({todo}));
+  
   }
 
 }
