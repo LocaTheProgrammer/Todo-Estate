@@ -78,5 +78,6 @@ export class TodoFormComponent implements OnChanges {
   cancel() {
     this.undoEvent.emit(this.todoForm.value);
   }
+  
 
 }
