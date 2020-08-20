@@ -12,9 +12,11 @@ import { reducers } from './redux';
 import { TodosEffects } from './redux/todos/todos.effects';
 import { RouterEffects } from './redux/router/router.effects';
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
