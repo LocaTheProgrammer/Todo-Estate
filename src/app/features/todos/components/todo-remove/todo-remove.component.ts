@@ -8,11 +8,11 @@ import { filter, switchMap } from 'rxjs/operators';
 import { getTodoById, getCurrentNavigatedTodo } from 'src/app/redux/todos';
 
 @Component({
-  selector: 'app-todo-edit',
-  templateUrl: './todo-edit.component.html',
-  styleUrls: ['./todo-edit.component.scss']
+  selector: 'app-todo-remove',
+  templateUrl: './todo-remove.component.html',
+  styleUrls: ['./todo-remove.component.scss']
 })
-export class TodoEditComponent {
+export class TodoRemoveComponent {
   get todo(): Observable<Todo>{
     return this.store.pipe(select(getCurrentNavigatedTodo));
   }

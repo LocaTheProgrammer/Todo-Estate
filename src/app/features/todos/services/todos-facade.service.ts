@@ -30,7 +30,7 @@ export class TodosFacadeService {
   }
 
   removeTodo(id: number){
-    this.router.navigateByUrl('/todo/'+id);
+    this.router.navigateByUrl('/todo/remove/'+id);
   
   }
 
