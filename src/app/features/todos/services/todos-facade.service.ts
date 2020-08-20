@@ -29,7 +29,7 @@ export class TodosFacadeService {
     this.router.navigateByUrl('/todos/edit/' + id);
   }
 
-  removeTodo(id: Number){
+  removeTodo(id: number){
     this.router.navigateByUrl('/todo/'+id);
   
   }
