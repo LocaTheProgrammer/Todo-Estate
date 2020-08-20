@@ -1,4 +1,4 @@
-import { updateTodo, postTodo } from './../../../redux/todos/todos.actions';
+import { updateTodo, postTodo, removeTodo } from './../../../redux/todos/todos.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -30,7 +30,7 @@ export class TodosFacadeService {
   }
 
    removeTodo(id: number){
-     this.router.navigateByUrl('/todo/remove/' + id);
+    this.store.dispatch(removeTodo({id}));
    }
 
   
