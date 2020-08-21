@@ -39,8 +39,6 @@ export class TodosEffects {
         ))
     ))
 
-<<<<<<< HEAD
-=======
     deleteTodo$ = createEffect (() => this.actions$.pipe(
         ofType(DeleteTodo),
         switchMap(action => this.httpCommunicationsService.retrieveDeleteCall<Todo>(`todos/${action.id}`).pipe(
@@ -48,7 +46,6 @@ export class TodosEffects {
         ))
     ))
 
->>>>>>> 8f15943cb140c30bd5e353a8ad8b4595b067d19d
 
     constructor(private actions$: Actions, private store: Store,
         private httpCommunicationsService: HttpCommunicationsService) {
