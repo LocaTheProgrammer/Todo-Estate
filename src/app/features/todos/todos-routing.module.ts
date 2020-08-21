@@ -10,7 +10,8 @@ const routes: Routes = [{
   path: '', component: TodosComponent, children: [
     {path: 'detail/:id', component: TodoDetailComponent},
     {path: 'edit/:id', component: TodoEditComponent},
-    {path: 'add', component: TodoAddComponent}
+    {path: 'add', component: TodoAddComponent},
+    //{path: 'remove/:id', component: TodoRemoveComponent}
   ]
 }];
 

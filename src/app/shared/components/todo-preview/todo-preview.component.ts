@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from 'src/app/core/model/todo.interface';
 
+
+
 @Component({
   selector: 'app-todo-preview',
   templateUrl: './todo-preview.component.html',
@@ -13,11 +15,18 @@ export class TodoPreviewComponent {
 
   @Output()
   detailEvent: EventEmitter<void> = new EventEmitter();
-
+  
+  @Output()
+  removeEvent: EventEmitter<void> = new EventEmitter();
+  
   constructor() { }
 
   detailClick() {
     this.detailEvent.emit();
+  }
+  
+  removeClick(){
+    this.removeEvent.emit();
   }
 
 }

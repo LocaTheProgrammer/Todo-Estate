@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { updateTodo, postTodo } from './../../../redux/todos/todos.actions';
+=======
+import { updateTodo, postTodo, removeTodo, DeleteTodo } from './../../../redux/todos/todos.actions';
+>>>>>>> 8f15943cb140c30bd5e353a8ad8b4595b067d19d
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -28,5 +32,11 @@ export class TodosFacadeService {
   goToEdit(id: number) {
     this.router.navigateByUrl('/todos/edit/' + id);
   }
+
+   removeTodo(id: number){
+    this.store.dispatch(DeleteTodo({id}));
+   }
+
+  
 
 }

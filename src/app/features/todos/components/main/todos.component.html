@@ -5,7 +5,7 @@
         <p routerLink="/todos/add">Inserisci nuovo Todo</p>
     </header>
     <section>
-        <app-todo-preview *ngFor="let todo of todosList | async" [todo]="todo" (detailEvent)="showDetail(todo)"></app-todo-preview>
+        <app-todo-preview *ngFor="let todo of todosList | async" [todo]="todo" (detailEvent)="showDetail(todo)" (removeEvent)="removeTodo(todo)"></app-todo-preview>
     </section>
     <section>
         <router-outlet></router-outlet>

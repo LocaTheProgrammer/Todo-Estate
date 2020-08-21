@@ -8,3 +8,5 @@ export const editTodo = createAction('[Todos] edit', props<{todo: Todo}>());
 export const retrieveAllTodos =  createAction('[Todos] retrieve all');
 export const updateTodo = createAction('[Todo] update', props<{todo: Todo}>());
 export const postTodo = createAction('[Todo] add to server', props<{todo: Todo}>());
+//effect
+export const DeleteTodo = createAction('[Todos] effect - remove',props<{id:number}>());

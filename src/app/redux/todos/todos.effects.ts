@@ -3,7 +3,7 @@ import { goToTodosHome } from './../../features/todos/redux/todos-navigation.act
 import { HttpCommunicationsService } from './../../core/http-communications/http-communications.service';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { retrieveAllTodos, initTodos, updateTodo, editTodo, postTodo, insertTodo } from './todos.actions';
+import { retrieveAllTodos, initTodos, updateTodo, editTodo, postTodo, insertTodo, removeTodo, DeleteTodo } from './todos.actions';
 import { switchMap, map, concatMap, withLatestFrom } from 'rxjs/operators';
 import { Todo } from 'src/app/core/model/todo.interface';
 import { goToDetail } from 'src/app/features/todos/redux/todos-navigation.actions';
@@ -39,6 +39,16 @@ export class TodosEffects {
         ))
     ))
 
+<<<<<<< HEAD
+=======
+    deleteTodo$ = createEffect (() => this.actions$.pipe(
+        ofType(DeleteTodo),
+        switchMap(action => this.httpCommunicationsService.retrieveDeleteCall<Todo>(`todos/${action.id}`).pipe(
+            switchMap(todo => [removeTodo({ id:action.id }), goToTodosHome()])
+        ))
+    ))
+
+>>>>>>> 8f15943cb140c30bd5e353a8ad8b4595b067d19d
 
     constructor(private actions$: Actions, private store: Store,
         private httpCommunicationsService: HttpCommunicationsService) {
