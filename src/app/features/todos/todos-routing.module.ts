@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TodosComponent } from './components/main/todos.component';
 import { TodoEditComponent } from './components/todo-edit/todo-edit.component';
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
-import { TodoRemoveComponent } from './components/todo-remove/todo-remove.component';
+
 
 const routes: Routes = [{
   path: '', component: TodosComponent, children: [
